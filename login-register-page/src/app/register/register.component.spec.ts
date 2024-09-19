@@ -1,27 +1,23 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-@Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
-})
-export class RegisterComponent {
-  name = '';
-  email = '';
-  phoneNumber = '';
-  username = '';
-  password = '';
-  confirmPassword = '';
+import { RegisterComponent } from './register.component';
 
-  constructor(private router: Router) {}
+describe('RegisterComponent', () => {
+  let component: RegisterComponent;
+  let fixture: ComponentFixture<RegisterComponent>;
 
-  onRegister() {
-    if (this.password === this.confirmPassword) {
-      // Perform registration logic here (e.g., API call)
-      this.router.navigate(['/welcome']);
-    } else {
-      alert('Passwords do not match');
-    }
-  }
-}
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [RegisterComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(RegisterComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

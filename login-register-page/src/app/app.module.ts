@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms'; // Ensure FormsModule is imported
+import { AppRoutingModule } from './app-routing.module'; // Make sure AppRoutingModule is imported
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { BackgroundAnimationComponent } from './background-animation/background-animation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
     LoginComponent,
+    RegisterComponent,
     WelcomeComponent,
+    BackgroundAnimationComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule, // Add FormsModule here
-    AppRoutingModule,
+    FormsModule,
+    AppRoutingModule, // RouterModule is part of this AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

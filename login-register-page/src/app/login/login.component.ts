@@ -7,17 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  username = '';
-  password = '';
-  errorMessage = '';
+  username: string = '';
+  password: string = '';
+  invalidCredentials: boolean = false; // Use a boolean flag
 
   constructor(private router: Router) {}
 
   onLogin() {
+    // Replace with your actual login logic
     if (this.username === 'admin' && this.password === 'admin') {
       this.router.navigate(['/welcome']);
+      this.invalidCredentials = false; // Reset the flag on successful login
     } else {
-      this.errorMessage = 'Incorrect username or password';
+      this.invalidCredentials = true; // Show invalid credentials message
     }
   }
 }

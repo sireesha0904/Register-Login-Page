@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,23 +6,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  user = {
-    name: '',
-    email: '',
-    username: '',
-    password: '',
-    confirmPassword: '',
-  };
+  // Declare the properties for two-way binding
+  name: string = '';
+  email: string = '';
+  phoneNumber: string = '';
+  username: string = '';
+  password: string = '';
+  confirmPassword: string = '';
 
-  constructor(private router: Router) {}
-
-  onRegister() {
-    if (this.user.password === this.user.confirmPassword) {
-      console.log('User registered:', this.user);
-      // Navigate to login page after registration
-      this.router.navigate(['/login']);
-    } else {
+  // Example of a method to handle form submission
+  onSubmit() {
+    if (this.password !== this.confirmPassword) {
       alert('Passwords do not match!');
+    } else {
+      console.log('User Registered:', {
+        name: this.name,
+        email: this.email,
+        phoneNumber: this.phoneNumber,
+        username: this.username,
+      });
     }
   }
 }
