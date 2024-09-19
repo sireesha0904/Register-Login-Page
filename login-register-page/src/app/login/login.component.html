@@ -1,15 +1,19 @@
 <div class="login-container">
-  <h2 class="title">Login</h2>
-  <form (ngSubmit)="onLogin()" #loginForm="ngForm">
-    <div class="form-group">
-      <label for="username">Username:</label>
-      <input type="text" id="username" [(ngModel)]="credentials.username" name="username" required class="form-control">
+  <div class="login-box">
+    <h2>Login</h2>
+    <form (ngSubmit)="onLogin()">
+      <div class="input-box">
+        <input type="text" placeholder="Username" [(ngModel)]="username" name="username" required />
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
+      </div>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <div class="login-links">
+      <a href="#">Forgot Password?</a>
+      <a routerLink="/register">Register Here</a>
     </div>
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" id="password" [(ngModel)]="credentials.password" name="password" required class="form-control">
-    </div>
-    <button type="submit" class="btn-submit">Login</button>
-    <p class="redirect">Don't have an account? <a routerLink="/register">Register here</a></p>
-  </form>
+  </div>
 </div>
