@@ -8,6 +8,11 @@ import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatIconModule } from '@angular/material/icon';
+import {
+  HttpClientModule,
+  provideHttpClient,
+  withFetch,
+} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,11 +24,10 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     FormsModule,
     MatIconModule,
+    HttpClientModule,
     AppRoutingModule, // RouterModule is part of this AppRoutingModule
   ],
-  providers: [
-    provideAnimationsAsync()
-  ],
+  providers: [provideHttpClient(withFetch()), provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
