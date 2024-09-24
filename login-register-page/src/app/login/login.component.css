@@ -1,99 +1,120 @@
-/* Container for the Login Form */
+/* login.component.css - Styles for Login Component */
+
+/* Login Container */
 .login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #7e57c2, #b39ddb); /* Gradient background */
+  background-color: #ffffff; /* Container Color */
+  border-radius: 20px; /* Rounded Corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow Effect */
+  padding: 40px 30px; /* Padding Inside the Container */
+  max-width: 400px; /* Maximum Width */
+  width: 90%; /* Responsive Width */
+  transition: transform 0.3s ease; /* Transition Effect on Hover */
 }
 
-/* Login Card */
-.login-card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  animation: fadeIn 0.5s ease;
+.login-container:hover {
+  transform: scale(1.02); /* Slight Scale Effect on Hover */
 }
 
-/* Heading Style */
-h2 {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-  color: #6a1b9a; /* Darker purple */
+/* Form Heading */
+.login-form h2 {
+  color: #5e35b1; /* Dark Purple Color */
+  text-align: center; /* Center Align Text */
+  margin-bottom: 20px; /* Margin Below Heading */
 }
 
-/* Input Group Style */
+/* Input Group */
 .input-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  border: 2px solid #d1c4e9; /* Light border */
-  border-radius: 10px;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  position: relative; /* Position Relative for Child Elements */
+  margin-bottom: 20px; /* Space Below Each Input */
 }
 
-/* Input Focus and Hover Effect */
-.input-group:hover, .input-group:focus-within {
-  border-color: #6a1b9a; /* Change border color on hover */
-  box-shadow: 0 0 8px rgba(106, 27, 154, 0.5); /* Glow effect */
-}
-
-/* Icon Style */
 .input-group .icon {
-  color: #6a1b9a;
-  margin: 0 10px; /* Spacing between icon and input */
-  font-size: 1.5rem;
+  position: absolute; /* Position Icon Inside Input */
+  left: 15px; /* Left Position */
+  top: 12px; /* Top Position */
+  color: #9e9e9e; /* Light Gray Color */
 }
 
-/* Input Field Style */
 .input-group input {
-  flex-grow: 1;
-  border: none;
-  outline: none;
-  padding: 0.75rem;
-  font-size: 1rem;
-  color: #333;
-  border-radius: 10px; /* Rounded corners for inputs */
+  width: 100%; /* Full Width Input */
+  padding: 12px 15px 12px 40px; /* Padding Inside Input */
+  border: 1px solid #d1d1d1; /* Border Color */
+  border-radius: 5px; /* Rounded Corners */
+  font-size: 16px; /* Font Size */
+  outline: none; /* Remove Outline */
+  transition: border-color 0.3s; /* Transition for Border Color */
 }
 
-/* Button Style */
+.input-group input:focus {
+  border-color: #5e35b1; /* Border Color on Focus */
+}
+
+/* Password Visibility Toggle */
+.toggle-password {
+  position: absolute; /* Position Icon Inside Input */
+  right: 15px; /* Right Position */
+  top: 12px; /* Top Position */
+  cursor: pointer; /* Pointer Cursor */
+  color: #9e9e9e; /* Light Gray Color */
+}
+
+.toggle-password:hover {
+  color: #5e35b1; /* Dark Purple Color on Hover */
+}
+
+/* Button Styles */
 button {
-  width: 100%;
-  padding: 0.75rem;
-  background: #6a1b9a; /* Button color */
-  color: #fff; /* Button text color */
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s; /* Button hover effects */
+  width: 100%; /* Full Width Button */
+  padding: 12px; /* Padding Inside Button */
+  background-color: #5e35b1; /* Dark Purple Background */
+  color: #ffffff; /* White Text */
+  border: none; /* Remove Border */
+  border-radius: 5px; /* Rounded Corners */
+  font-size: 18px; /* Font Size */
+  cursor: pointer; /* Pointer Cursor */
+  transition: background-color 0.3s, transform 0.2s; /* Transition Effects */
 }
 
-/* Button Hover Effect */
 button:hover {
-  background: #4a0072; /* Darker shade on hover */
-  transform: translateY(-2px); /* Lift effect */
+  background-color: #7e57c2; /* Lighter Purple on Hover */
+  transform: translateY(-2px); /* Slight Lift Effect on Hover */
 }
 
-/* Link Style */
+/* Links Container */
+.links-container {
+  text-align: center; /* Center Align Text */
+  margin-top: 20px; /* Space Above Links */
+}
+
 .redirect-link {
-  color: #6a1b9a; /* Link color */
-  margin-top: 1rem;
+  font-size: 14px; /* Font Size */
+  color: #555; /* Darker Gray Color */
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.redirect-link a {
+  color: #5e35b1; /* Dark Purple Color */
+  text-decoration: none; /* No Underline */
 }
 
-/* Responsive Design */
+.redirect-link a:hover {
+  color: #7e57c2; /* Lighter Purple on Hover */
+}
+
+/* Media Queries for Responsive Design */
 @media (max-width: 600px) {
-  .login-card {
-    padding: 1.5rem;
+  .login-container {
+    padding: 30px 20px; /* Adjust Padding on Smaller Screens */
+  }
+
+  .login-form h2 {
+    font-size: 24px; /* Adjust Font Size on Smaller Screens */
+  }
+
+  button {
+    font-size: 16px; /* Adjust Button Font Size */
+  }
+
+  .input-group input {
+    font-size: 14px; /* Adjust Input Font Size */
   }
 }

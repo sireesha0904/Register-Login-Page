@@ -4,15 +4,15 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #ab47bc, #e1bee7); /* Gradient background */
+  background: linear-gradient(135deg, #8e24aa, #e1bee7); /* Gradient background */
 }
 
 /* Register Card */
 .register-card {
   background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 3rem;
   width: 90%;
   max-width: 400px;
   text-align: center;
@@ -21,8 +21,8 @@
 
 /* Heading Style */
 h2 {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
   color: #8e24aa; /* Darker purple */
 }
 
@@ -30,16 +30,16 @@ h2 {
 .input-group {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border: 2px solid #d1c4e9; /* Light border */
-  border-radius: 10px;
+  border-radius: 25px;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 /* Input Focus and Hover Effect */
 .input-group:hover, .input-group:focus-within {
   border-color: #8e24aa; /* Change border color on hover */
-  box-shadow: 0 0 8px rgba(142, 36, 170, 0.5); /* Glow effect */
+  box-shadow: 0 0 10px rgba(142, 36, 170, 0.5); /* Glow effect */
 }
 
 /* Icon Style */
@@ -54,21 +54,21 @@ h2 {
   flex-grow: 1;
   border: none;
   outline: none;
-  padding: 0.75rem;
+  padding: 1rem;
   font-size: 1rem;
   color: #333;
-  border-radius: 10px; /* Rounded corners for inputs */
+  border-radius: 25px; /* Rounded corners for inputs */
 }
 
 /* Button Style */
 button {
   width: 100%;
-  padding: 0.75rem;
+  padding: 1rem;
   background: #8e24aa; /* Button color */
   color: #fff; /* Button text color */
   border: none;
-  border-radius: 10px;
-  font-size: 1rem;
+  border-radius: 25px;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s; /* Button hover effects */
 }
@@ -79,10 +79,12 @@ button:hover {
   transform: translateY(-2px); /* Lift effect */
 }
 
-/* Link Style */
+/* Redirect Link Style */
 .redirect-link {
   color: #8e24aa; /* Link color */
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* Fade-in Animation */
@@ -94,6 +96,6 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 600px) {
   .register-card {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 }
