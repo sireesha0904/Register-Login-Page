@@ -2,50 +2,72 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #7A1CAC;
+  min-height: 100vh;
+  background-color: #f3f4f7;
 }
 
-.register-box {
-  background-color: #EBD3F8;
-  padding: 40px;
+.register-form {
+  background: white;
+  padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
   text-align: center;
+  color: #673ab7;
 }
 
-.register-box h2 {
-  color: #2E073F;
-}
-
-.input-box {
-  margin-bottom: 20px;
-}
-
-.input-box input {
-  width: 100%;
-  padding: 10px;
-  border: none;
+.input-group {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.input-group:hover {
+  border-color: #673ab7;
+}
+
+.input-group mat-icon {
+  margin-right: 0.5rem;
+  color: #673ab7;
+}
+
+input {
+  border: none;
   outline: none;
-  background: #f9f9f9;
-  transition: 0.3s;
+  flex-grow: 1;
 }
 
-.input-box input:focus {
-  box-shadow: 0 0 5px #7A1CAC;
-}
-
-.register-btn {
-  background-color: #7A1CAC;
-  color: #fff;
-  padding: 10px 20px;
+button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #673ab7;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
-.register-btn:hover {
-  background-color: #5C1284;
+button:hover {
+  background-color: #512da8;
+}
+
+.redirect-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.redirect-link a {
+  color: #673ab7;
+  text-decoration: none;
+}
+
+.redirect-link a:hover {
+  text-decoration: underline;
 }

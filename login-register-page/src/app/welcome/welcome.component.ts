@@ -7,10 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./welcome.component.css'],
 })
 export class WelcomeComponent {
+  username: string = 'User'; // Set this value dynamically in a real app
+
   constructor(private router: Router) {}
 
-  logout() {
-    // Add logout logic here (e.g., clear session, redirect to login)
+  // Logout method
+  logout(): void {
+    // Clear any stored user data (if using local storage, session storage, etc.)
+    localStorage.removeItem('user');
+
+    // Navigate back to the login page
     this.router.navigate(['/login']);
   }
 }

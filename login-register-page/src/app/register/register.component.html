@@ -1,29 +1,42 @@
-<div class="register-form">
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="name">Name</label>
-      <input type="text" placeholder="Name" [(ngModel)]="name" name="name" required />
+
+<div class="register-container">
+  <form class="register-form" (submit)="onRegister()">
+    <h2>Register</h2>
+
+    <div class="input-group">
+      <mat-icon>person</mat-icon>
+      <input type="text" placeholder="Full Name" [(ngModel)]="name" name="name" required />
     </div>
-    <div>
-      <label for="email">Email</label>
+
+    <div class="input-group">
+      <mat-icon>phone</mat-icon>
+      <input type="tel" placeholder="Phone Number" [(ngModel)]="phoneNumber" name="phoneNumber" required />
+    </div>
+
+    <div class="input-group">
+      <mat-icon>email</mat-icon>
       <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required />
     </div>
-    <div>
-      <label for="phoneNumber">Phone Number</label>
-      <input type="text" placeholder="Phone Number" [(ngModel)]="phoneNumber" name="phoneNumber" required />
-    </div>
-    <div>
-      <label for="username">Username</label>
+
+    <div class="input-group">
+      <mat-icon>person</mat-icon>
       <input type="text" placeholder="Username" [(ngModel)]="username" name="username" required />
     </div>
-    <div>
-      <label for="password">Password</label>
+
+    <div class="input-group">
+      <mat-icon>lock</mat-icon>
       <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
     </div>
-    <div>
-      <label for="confirmPassword">Confirm Password</label>
+
+    <div class="input-group">
+      <mat-icon>lock</mat-icon>
       <input type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword" required />
     </div>
+
     <button type="submit">Register</button>
   </form>
+
+  <div class="redirect-link">
+    Already have an account? <a routerLink="/login">Login here</a>
+  </div>
 </div>

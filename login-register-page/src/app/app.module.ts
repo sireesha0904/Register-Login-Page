@@ -6,22 +6,24 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { BackgroundAnimationComponent } from './background-animation/background-animation.component';
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     WelcomeComponent,
-    BackgroundAnimationComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    MatIconModule,
     AppRoutingModule, // RouterModule is part of this AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
