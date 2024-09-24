@@ -1,73 +1,149 @@
+/* Register Container */
 .register-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f3f4f7;
+  background: linear-gradient(135deg, #9c27b0, #673ab7);
+  padding: 1rem;
 }
 
+/* Register Form */
 .register-form {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.8s ease;
 }
 
+/* Heading Style */
 h2 {
   text-align: center;
   color: #673ab7;
+  margin-bottom: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
 }
 
+/* Input Group Style */
 .input-group {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #d1c4e9;
   border-radius: 5px;
-  transition: 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Input Group Hover Effect */
 .input-group:hover {
-  border-color: #673ab7;
+  border-color: #9c27b0;
+  box-shadow: 0 0 5px rgba(156, 39, 176, 0.5);
+  transform: scale(1.01);
 }
 
-.input-group mat-icon {
+/* Icon Style */
+.input-group .icon {
+  color: #9c27b0;
   margin-right: 0.5rem;
-  color: #673ab7;
 }
 
-input {
+/* Input Field Style */
+.input-group input {
+  flex-grow: 1;
   border: none;
   outline: none;
-  flex-grow: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  background: transparent;
+  transition: all 0.3s ease;
 }
 
+/* Input Field Hover Effect */
+.input-group input:hover {
+  background: rgba(156, 39, 176, 0.05);
+}
+
+/* Button Style */
 button {
   width: 100%;
   padding: 1rem;
-  background-color: #673ab7;
-  color: white;
+  background: #9c27b0; /* Purple background */
+  color: #fff; /* White text */
   border: none;
   border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
+/* Button Hover Effect */
 button:hover {
-  background-color: #512da8;
+  background: #7b1fa2; /* Darker purple on hover */
+  transform: translateY(-2px); /* Lift effect */
 }
 
-.redirect-link {
+/* Links Container */
+.links-container {
+  margin-top: 1.5rem;
   text-align: center;
-  margin-top: 1rem;
+}
+
+/* Redirect Link Style */
+.redirect-link {
+  color: #9c27b0; /* Link color */
 }
 
 .redirect-link a {
-  color: #673ab7;
-  text-decoration: none;
+  color: #9c27b0; /* Link color */
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Transition for hover effect */
 }
 
 .redirect-link a:hover {
-  text-decoration: underline;
+  color: #7b1fa2; /* Change color on hover */
 }
+
+/* Password Eye Icon Toggle */
+.password-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #9c27b0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .register-form {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
+

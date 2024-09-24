@@ -8,39 +8,27 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
   name: string = '';
-  phoneNumber: string = '';
+  phoneNum: string = '';
   email: string = '';
   username: string = '';
   password: string = '';
   confirmPassword: string = '';
+  showPassword: boolean = false;
+  showConfirmPassword: boolean = false;
 
   constructor(private router: Router) {}
 
-  // This method handles the registration form submission
-  onRegister(): void {
-    if (
-      this.name &&
-      this.phoneNumber &&
-      this.email &&
-      this.username &&
-      this.password &&
-      this.confirmPassword
-    ) {
-      if (this.password === this.confirmPassword) {
-        // Replace this with an API call to your backend
-        console.log('Name:', this.name);
-        console.log('Phone Number:', this.phoneNumber);
-        console.log('Email:', this.email);
-        console.log('Username:', this.username);
-        console.log('Password:', this.password);
+  onRegister() {
+    // Implement registration logic here
+    // If successful, navigate to the welcome page or login page
+    this.router.navigate(['/welcome']);
+  }
 
-        // Navigate to the login page after successful registration
-        this.router.navigate(['/login']);
-      } else {
-        alert('Passwords do not match!');
-      }
-    } else {
-      alert('Please fill in all fields.');
-    }
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
+  toggleConfirmPasswordVisibility() {
+    this.showConfirmPassword = !this.showConfirmPassword;
   }
 }

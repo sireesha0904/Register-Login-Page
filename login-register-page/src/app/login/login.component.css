@@ -1,123 +1,138 @@
-/* Container styles */
+/* Login Container */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  position: relative;
-  z-index: 1;
-  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #9c27b0, #673ab7);
+  padding: 1rem;
 }
 
-.login-box {
-  background-color: rgba(195, 207, 233, 0.8); /* Slightly transparent */
-  border-radius: 15px;
-  padding: 55px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  width: 320px;
+/* Login Form */
+.login-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.8s ease;
+}
+
+/* Heading Style */
+h2 {
   text-align: center;
-  transition: transform 0.3s ease;
+  color: #673ab7;
+  margin-bottom: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
 
-
-/* Input box styles */
-.input-box {
-  margin: 18px 0; /* Increased margin for spacing */
-  position: relative; /* Positioning for pseudo-elements */
+/* Input Group Style */
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #d1c4e9;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.input-box input {
+/* Input Group Hover Effect */
+.input-group:hover {
+  border-color: #9c27b0;
+  box-shadow: 0 0 5px rgba(156, 39, 176, 0.5);
+}
+
+/* Icon Style */
+.input-group .icon {
+  color: #9c27b0;
+}
+
+/* Input Field Style */
+.input-group input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Button Style */
+button {
   width: 100%;
-  padding: 13px; /* Increased padding for comfort */
+  padding: 1rem;
+  background: #9c27b0;
+  color: #fff;
   border: none;
-  border-radius: 10px; /* Rounded corners for inputs */
-  box-shadow: 0 2px 5px rgba(10, 10, 10, 0.1);
-  font-size: 14px; /* Increased font size */
-  transition: border-color 0.3s ease, transform 0.3s ease; /* Transition effects */
-}
-
-/* Hover effect for input */
-.input-box input:hover {
-  border: 1px solid #a03ed4; /* Highlight border color on hover */
-  transform: scale(1.03); /* Slightly enlarge on hover */
-}
-
-/* Focus effect for input */
-.input-box input:focus {
-  outline: none; /* Remove default outline */
-  border: 1px solid #7A1CAC; /* Border color for focus */
-  box-shadow: 0 0 10px rgba(122, 28, 172, 0.5); /* Soft glow on focus */
-}
-
-/* Placeholder styles */
-.input-box input::placeholder {
-  color: #4a0470; /* Color for placeholder text */
-  transition: color 0.3s ease; /* Transition for placeholder color */
-}
-
-.input-box input:hover::placeholder,
-.input-box input:focus::placeholder {
-  color: rgba(106, 12, 158, 0.7); /* Change color on hover/focus */
-}
-
-/* Error message styles */
-.error-message {
-  color: red;
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-/* Button styles */
-.login-btn {
-  width: auto; /* Set to auto for center alignment */
-  padding: 8px 20px; /* Adjust padding for a smaller button */
-  background-color: #7A1CAC; /* Bright Purple */
-  color: white;
-  border: none;
-  border-radius: 8px; /* Rounded corners */
-  font-size: 16px; /* Slightly smaller font size */
+  border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  position: relative; /* For glowing effect */
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.login-btn:hover {
-  background-color: #6A0C9E; /* Darker shade for hover */
-  transform: translateY(-1px); /* Slight upward movement */
-  box-shadow: 0 0 20px rgba(106, 12, 158, 0.5), 0 0 30px rgba(106, 12, 158, 0.3); /* Glowing effect */
+/* Button Hover Effect */
+button:hover {
+  background: #7b1fa2;
+  transform: translateY(-2px);
 }
 
-/* Link styles */
-.login-links {
-  margin-top: 15px;
+/* Links Container */
+.links-container {
+  margin-top: 1.5rem;
+  text-align: center;
 }
 
-.login-links a {
-  color: #7A1CAC;
-  text-decoration: none;
-  margin: 0 10px;
-  position: relative; /* For positioning the pseudo-element */
-  transition: color 0.3s ease, transform 0.3s ease;
+/* Redirect Link Style */
+.redirect-link {
+  color: #9c27b0; /* Change to link color */
 }
 
-.login-links a:hover {
-  color: #4b1668; /* Darker shade on hover */
-  transform: translateY(-2px) scale(1.05); /* Slight upward movement and scaling */
+.redirect-link a {
+  color: #9c27b0;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Transition for hover effect */
 }
 
-/* Pseudo-element for the hover effect */
-.login-links a::after {
-  content: '';
+.redirect-link a:hover {
+  color: #7b1fa2; /* Change color on hover */
+}
+
+/* Password Eye Icon Toggle */
+.password-group {
+  position: relative;
+}
+
+.toggle-password {
   position: absolute;
-  left: 0;
-  bottom: -2px; /* Positioned below the text */
-  width: 100%;
-  height: 2px; /* Thickness of the underline */
-  background-color: rgba(106, 12, 158, 0.5); /* Underline color */
-  transform: scaleX(0); /* Initially hidden */
-  transition: transform 0.3s ease; /* Smooth transition */
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #9c27b0;
 }
 
-.login-links a:hover::after {
-  transform: scaleX(1); /* Scale to full width on hover */
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .login-form {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
 }
