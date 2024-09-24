@@ -1,101 +1,130 @@
-/* Container for the Register Form */
+/* register.component.css - Enhanced Styles for Registration Component */
+
+/* Register Container */
 .register-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #8e24aa, #e1bee7); /* Gradient background */
+  background-color: #eac8e1; /* Container Color */
+  border-radius: 10px; /* Rounded Corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow Effect */
+  padding: 40px 30px; /* Increased Padding Inside the Container */
+  max-width: 800px; /* Increased Maximum Width */
+  width: 100%; /* Use full width but will be constrained by max-width */
+  margin: auto; /* Center Align Container */
+  position: absolute; /* Absolute positioning for centering */
+  top: 50%; /* Move to the middle of the page vertically */
+  left: 50%; /* Move to the middle of the page horizontally */
+  transform: translate(-50%, -50%); /* Translate back to center */
+  transition: transform 0.3s ease; /* Transition Effect on Hover */
 }
 
-/* Register Card */
-.register-card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  padding: 3rem;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  animation: fadeIn 0.5s ease;
+.register-container:hover {
+  transform: translate(-50%, -50%) scale(1.02); /* Slight Scale Effect on Hover */
 }
 
-/* Heading Style */
-h2 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  color: #8e24aa; /* Darker purple */
+/* Form Heading */
+.register-form h2 {
+  color: #b135a9; /* Dark Purple Color */
+  text-align: center; /* Center Align Text */
+  margin-bottom: 15px; /* Margin Below Heading */
+  font-size: 20px; /* Reduced Font Size for Heading */
+  font-weight: 600; /* Slightly Bolder Heading */
 }
 
-/* Input Group Style */
+/* Input Group */
 .input-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  border: 2px solid #d1c4e9; /* Light border */
-  border-radius: 25px;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  position: relative; /* Position Relative for Child Elements */
+  margin-bottom: 15px; /* Space Below Each Input */
 }
 
-/* Input Focus and Hover Effect */
-.input-group:hover, .input-group:focus-within {
-  border-color: #8e24aa; /* Change border color on hover */
-  box-shadow: 0 0 10px rgba(142, 36, 170, 0.5); /* Glow effect */
-}
-
-/* Icon Style */
 .input-group .icon {
-  color: #8e24aa;
-  margin: 0 10px; /* Spacing between icon and input */
-  font-size: 1.5rem;
+  position: absolute; /* Position Icon Inside Input */
+  left: 10px; /* Left Position */
+  top: 12px; /* Top Position */
+  color: #81226d; /* Light Gray Color */
+  font-size: 20px; /* Increased Icon Size */
 }
 
-/* Input Field Style */
+/* Input Styles */
 .input-group input {
-  flex-grow: 1;
-  border: none;
-  outline: none;
-  padding: 1rem;
-  font-size: 1rem;
-  color: #333;
-  border-radius: 25px; /* Rounded corners for inputs */
+  width: 100%; /* Full Width Input */
+  padding: 12px 10px 12px 40px; /* Increased Padding Inside Input */
+  border: 1px solid #4b0341; /* Border Color */
+  border-radius: 5px; /* Rounded Corners */
+  font-size: 14px; /* Font Size */
+  outline: none; /* Remove Outline */
+  transition: border-color 0.3s; /* Transition for Border Color */
 }
 
-/* Button Style */
+.input-group input:focus {
+  border-color: #5e35b1; /* Border Color on Focus */
+}
+
+/* Password Visibility Toggle */
+.toggle-password {
+  position: absolute; /* Position Icon Inside Input */
+  right: 10px; /* Right Position */
+  top: 12px; /* Top Position */
+  cursor: pointer; /* Pointer Cursor */
+  color: #800884; /* Light Gray Color */
+  font-size: 20px; /* Increased Toggle Icon Size */
+}
+
+.toggle-password:hover {
+  color: #5e35b1; /* Dark Purple Color on Hover */
+}
+
+/* Button Styles */
 button {
-  width: 100%;
-  padding: 1rem;
-  background: #8e24aa; /* Button color */
-  color: #fff; /* Button text color */
-  border: none;
-  border-radius: 25px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s; /* Button hover effects */
+  width: 100%; /* Full Width Button */
+  padding: 12px; /* Increased Padding Inside Button */
+  background-color: #4d0b43; /* Dark Purple Background */
+  color: #ffffff; /* White Text */
+  border: none; /* Remove Border */
+  border-radius: 5px; /* Rounded Corners */
+  font-size: 16px; /* Font Size */
+  cursor: pointer; /* Pointer Cursor */
+  transition: background-color 0.3s, transform 0.2s; /* Transition Effects */
 }
 
-/* Button Hover Effect */
 button:hover {
-  background: #6a0080; /* Darker shade on hover */
-  transform: translateY(-2px); /* Lift effect */
+  background-color: #7e57c2; /* Lighter Purple on Hover */
+  transform: translateY(-2px); /* Slight Lift Effect on Hover */
 }
 
-/* Redirect Link Style */
+/* Links Container */
+.links-container {
+  text-align: center; /* Center Align Text */
+  margin-top: 15px; /* Space Above Links */
+}
+
 .redirect-link {
-  color: #8e24aa; /* Link color */
-  margin-top: 1.5rem;
-  text-decoration: underline;
-  cursor: pointer;
+  font-size: 12px; /* Font Size */
+  color: #555; /* Darker Gray Color */
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.redirect-link a {
+  color: #5e35b1; /* Dark Purple Color */
+  text-decoration: none; /* No Underline */
 }
 
-/* Responsive Design */
+.redirect-link a:hover {
+  color: #7e57c2; /* Lighter Purple on Hover */
+}
+
+/* Media Queries for Responsive Design */
 @media (max-width: 600px) {
-  .register-card {
-    padding: 2rem;
+  .register-container {
+    padding: 30px; /* Adjust Padding on Smaller Screens */
+  }
+
+  .register-form h2 {
+    font-size: 16px; /* Adjust Font Size on Smaller Screens */
+  }
+
+  button {
+    font-size: 14px; /* Adjust Button Font Size */
+  }
+
+  .input-group input {
+    font-size: 12px; /* Adjust Input Font Size */
   }
 }
